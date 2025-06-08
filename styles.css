@@ -1,0 +1,126 @@
+agrupar {
+    width: 960px;
+    margin: 15px auto;
+    text-align: left;
+    }	
+body{
+  background-color: rgb(80, 255, 173);
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.nav-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+       
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#fechaHora {
+    position: fixed;
+    top: 0;
+    right: 50px;
+    padding: 5px 10px;
+    background-color: rgba(15, 219, 185, 0.959);
+    border: 3px solid rgb(247, 6, 6);
+}
+.nav-buttons {
+    text-align: center;
+    margin-top: 20px; /* Ajusta según sea necesario */
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.nav-container a {
+    font-family: 'Roboto', sans-serif;
+}
+.nav-container a {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+.index {
+    background-image: url('Dollarphotoclub_85774162.jpg');
+    background-size: cover;
+
+} 
+     h1 {
+    font: bold 36px times, sans-serif;
+    }
+    h2 {
+        font: bold 35px times, sans-serif;color:red;
+         text-align: center;
+       }
+     h3 {
+        font: bold 45px times, sans-serif;color:rgba(80, 8, 68, 0.575);
+         text-align: center;
+       }
+    h4 {
+        font: bold 25px Comic Sans MS, sans-serif;color:red;
+         text-align: center;
+       }
+        h5 {
+        font: bold 20px times, sans-serif;color:rgba(189, 32, 163, 0.575);
+         text-align: center;
+       }
+
+.informacion {
+    background-image: url('blue-matrix-background-vector.jpg');
+    background-size: cover;
+ 
+}
+.servicios {
+    background-image: url('PBX-virtual.webp');
+    background-size: cover;
+}
+
+a img {
+    border-radius: 25px;
+    transition: transform 0.2s ease-in-out;
+}
+
+a img:hover {
+    transform: scale(3.3);
+}
+img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px; /* Ajusta según lo que necesites */
+    margin-left: 18cm; /* Mueve la imagen 5 cm hacia la derecha */
+}
+form {
+    position: relative;
+    left: 11cm;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.social-nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.social-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-nav a:hover {
+  color: #ffd700; /* Cambia el color al pasar el ratón sobre los iconos */
+}
