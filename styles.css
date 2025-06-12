@@ -54,10 +54,11 @@ body {
 
 } 
      h1 {
-    font: bold 36px times, sans-serif;
+     font: bold 35px times, sans-serif;color:rgb(0, 0, 0);
+         text-align: left;
     }
     h2 {
-        font: bold 35px times, sans-serif;color:red;
+        font: bold 35px times, sans-serif;color:rgb(0, 38, 255);
          text-align: center;
        }
      h3 {
@@ -65,8 +66,8 @@ body {
          text-align: center;
        }
     h4 {
-        font: bold 25px Comic Sans MS, sans-serif;color:red;
-         text-align: center;
+        font: bold 20px Comic Sans MS, sans-serif;color:rgb(17, 4, 4);
+         text-align: end;
        }
         h5 {
         font: bold 20px times, sans-serif;color:rgba(189, 32, 163, 0.575);
@@ -74,7 +75,7 @@ body {
        }
 
 .informacion {
-    background-image: url('blue-matrix-background-vector.jpg');
+    background-image: url(mantenimiento.png);
     background-size: cover;
  
 }
