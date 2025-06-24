@@ -65,7 +65,10 @@ body {
         font: bold 55px times, sans-serif;color:rgb(123, 206, 151);
          text-align: justify;
        }
-  
+  h4 {
+        font: bold 35px times, sans-serif;color:rgb(4, 59, 23);
+         text-align: justify;
+       }
 
 .informacion {
     background-image: url(mantenimiento.png);
@@ -85,15 +88,15 @@ a img {
 a img:hover {
     transform: scale(3.3);
 }
-img {
+img {                    /*imagen whats app */
     display: block;
     margin: 0 auto;
     padding-top: 10px; /* Ajusta según lo que necesites */
-    margin-left: 18cm; /* Mueve la imagen 5 cm hacia la derecha */
+    margin-left: 05cm; /* Mueve la imagen 5 cm hacia la derecha */
 }
-form {
+form {                   /* formulario*/
     position: relative;
-    left: 11cm;
+    left: 13cm;
 }
 body {
   font-family: 'Arial', sans-serif;
@@ -140,4 +143,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.map iframe {
+  width: 50%;
+  max-width: 400px;
+  height: 200px;
 }
