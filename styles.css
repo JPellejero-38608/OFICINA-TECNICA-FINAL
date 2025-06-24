@@ -54,25 +54,18 @@ body {
 
 } 
      h1 {
+     font: bold 35px times, sans-serif;color:rgb(153, 7, 7);
+         text-align: center;
+    }
+         h2 {
      font: bold 35px times, sans-serif;color:rgb(0, 0, 0);
          text-align: left;
     }
-    h2 {
-        font: bold 35px times, sans-serif;color:rgb(0, 38, 255);
-         text-align: center;
-       }
      h3 {
-        font: bold 45px times, sans-serif;color:rgba(80, 8, 68, 0.575);
-         text-align: center;
+        font: bold 55px times, sans-serif;color:rgb(123, 206, 151);
+         text-align: justify;
        }
-    h4 {
-        font: bold 20px Comic Sans MS, sans-serif;color:rgb(17, 4, 4);
-         text-align: end;
-       }
-        h5 {
-        font: bold 20px times, sans-serif;color:rgba(189, 32, 163, 0.575);
-         text-align: center;
-       }
+  
 
 .informacion {
     background-image: url(mantenimiento.png);
@@ -109,19 +102,42 @@ body {
   box-sizing: border-box;
 }
 
-.social-nav {
-  background-color: #333;
+.nav-bar {
+  display: flex;
+  justify-content: space-between; /* Distribuye los grupos */
+  align-items: center;
   padding: 10px;
-  text-align: center;
+  background-color: #333;
 }
 
-.social-nav a {
-  color: #fff;
+.left-group {
+  display: flex;
+  margin-left: 40px; /* Aleja el grupo de la izquierda */
+  gap: 30px; /* Espaciado entre los botones */
+}
+
+.center-group {
+  display: flex;
+  gap: 40px;
+  justify-content: center; /* Centra el grupo */
+  flex-grow: 1; /* Permite ocupar espacio y centrar dentro del nav */
+}
+
+.nav-bar a {
   text-decoration: none;
-  margin: 0 10px;
-  font-size: 24px;
+  color: white;
+  font-size: 20px;
 }
-
-.social-nav a:hover {
-  color: #ffd700; /* Cambia el color al pasar el ratón sobre los iconos */
+.hero-header {
+  background-image: url('Dollarphotoclub_85774162.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Esto hace que la sección ocupe toda la altura de la pantalla */
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(185, 22, 22, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

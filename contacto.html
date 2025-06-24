@@ -1,111 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://kit.fontawesome.com/6b48925c26.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css">
-   <title>Contacto - Oficina Tecnica</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-</head>
-<body>
-<nav class="social-nav">
-  <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a>
-  <a href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
-  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://ar.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-  <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-</nav>
-
-</body>
-
-    <title>Contacto - Oficina Tecnica</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-</head>
-<body>
-    <header>
-      
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html"><h1>Inicio</h1></a></li>
-               
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="contact">
-            <div class="contact-info">
-                <h2>Información de Contacto</h2>
-                <ul>
-                    <h5><strong>Domicilio:</strong> Av. Soldado Argentino 2067</h5>
-                    <h5><strong>Teléfono:</strong> +541164973624</h5>
-                    <h5><strong>País:</strong>Argentina</h5>
-                    <h5><strong>Localidad:</strong> Marcos Paz</h5>
-                    <h5><strong>Código Postal:</strong> 1727</h5>
-                </ul>
-               <p>
-              <a href="https://wa.me/5491164973624" target="_blank">
-    <img src="favicon-32x32.png" alt="WhatsApp" style="width: 60px; height: 40px;">
-</a>
-                </a>
-            </p>
-
-            </div>
-           <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xdkzojzy"
-  method="POST"
-><script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Oficina Técnica</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/6b48925c26.js" crossorigin="anonymous"></script>
+  <script>
     function validarFormulario() {
-      var nombre = document.getElementById('nombre').value;
-      var email = document.getElementById('email').value;
-      var mensaje = document.getElementById('mensaje').value;
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (nombre.trim() == '' || email.trim() == '' || mensaje.trim() == '') {
+      if (!nombre || !email || !mensaje) {
         alert('Por favor, complete todos los campos.');
         return false;
       }
-
-      // Validar el formato del correo electrónico
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        alert('Por favor, introduzca una dirección de correo electrónico válida.');
+        alert('Ingrese un correo electrónico válido.');
         return false;
       }
 
-      // Si todo está bien, se puede enviar el formulario
       alert('¡Formulario enviado con éxito!');
       return true;
     }
   </script>
-
+</head>
 <body>
+  <nav class="nav-bar">
+    <div class="left-group">
+      <a href="index.html" title="INICIO"><i class="fa-solid fa-house"></i></a>
+      <a href="servicios.html" title="SERVICIOS"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+      <a href="informacion.html" title="INFORMACIÓN"><i class="fa-solid fa-file"></i></a>
+    </div>
+    <div class="center-group">
+      <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://ar.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </nav>
 
-  <h1>Formulario de Contacto</h1>
+  <main>
+    <section class="contact">
+      <div class="contact-info">
+        <h2>Información de Contacto</h2>
+        <ul>
+          <li><strong>Domicilio:</strong> Av. Soldado Argentino 2067</li>
+          <li><strong>Teléfono:</strong> +54 11 6497 3624</li>
+          <li><strong>País:</strong> Argentina</li>
+          <li><strong>Localidad:</strong> Marcos Paz</li>
+          <li><strong>Código Postal:</strong> 1727</li>
+        </ul>
+        <a href="https://wa.me/5491164973624" target="_blank">
+          <img src="favicon-32x32.png" alt="WhatsApp" style="width: 60px; height: 40px;">
+        </a>
+      </div>
 
-  <form onsubmit="return validarFormulario()">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required><br><br>
+      <form action="https://formspree.io/f/xdkzojzy" method="POST" onsubmit="return validarFormulario()">
+        <h1>Formulario de Contacto</h1>
 
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required><br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
 
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
 
-    <input type="submit" value="Enviar">
-  </form>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-</body>
-</form>
-        </section>
-        <section class="map">
-            <!-- Coloca aquí tu mapa de Google Maps o código de mapa interactivo -->
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13108.38881031173!2d-58.84041635!3d-34.7783282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcec14b5afa6d1%3A0x6075ffd50ba4ec19!2sCapilla%20Nuestra%20Se%C3%B1ora%20De%20Fatima!5e0!3m2!1ses!2sar!4v1748364086497!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-    </main>
+        <input type="submit" value="Enviar" />
+      </form>
+    </section>
+
+    <section class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13108.38881031173!2d-58.84041635!3d-34.7783282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcec14b5afa6d1%3A0x6075ffd50ba4ec19!2sCapilla%20Nuestra%20Se%C3%B1ora%20De%20Fatima!5e0!3m2!1ses!2sar!4v1748364086497!5m2!1ses!2sar"
+        width="400" height="300" style="border:100;" allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+  </main>
 </body>
 </html>
