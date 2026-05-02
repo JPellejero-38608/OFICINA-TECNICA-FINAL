@@ -3,19 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INFORMACION</title>
-
-  <!-- Estilos personalizados -->
+  <title>INFORMACION - Oficina Técnica</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="logo-32x32.png" />
-
-  <!-- Librerías -->
   <script src="https://kit.fontawesome.com/6b48925c26.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.17.0/dist/xlsx.full.min.js"></script>
 </head>
-
 <body class="informacion">
-  <!-- Navegación -->
   <nav class="nav-bar">
     <div class="left-group">
       <a href="index.html" title="INICIO"><i class="fa-sharp fa-solid fa-house"></i></a>
@@ -24,95 +18,32 @@
     </div>
   </nav>
 
-  <!-- Carga de Excel -->
-  <section class="text-center my-4">
-    <h2>📄 Cargar archivo Excel</h2>
-    <input type="file" id="archivoExcel" accept=".xlsx" />
-    <button onclick="leerExcel()">Cargar Excel</button>
-  </section>
+  <main class="container py-4 text-center">
+    <section class="excel-loader mb-5">
+      <h2>📄 Gestión de Archivos Técnicos</h2>
+      <p>Cargue su listado de tareas o números telefónicos en formato .xlsx</p>
+      <input type="file" id="archivoExcel" accept=".xlsx" class="mb-2" />
+      <br>
+      <button onclick="leerExcel()" class="btn-accion">Procesar Archivo</button>
+    </section>
 
-  <!-- Información fija -->
-  <section class="text-center my-4">
-    <h2>LISTADOS TELEFÓNICOS</h2>
-    <h2>NÚMEROS DE EMERGENCIAS</h2>
-    <h2>TAREAS REALIZADAS</h2>
-  </section>
+    <div id="resultado-excel" class="table-responsive mt-4">
+      <!-- Aquí aparecerá la tabla del Excel sin abrir ventanas nuevas -->
+    </div>
+  </main>
 
-  <!-- Script funcional -->
   <script>
     function leerExcel() {
-      const archivoInput = document.getElementById("archivoExcel");
-      const archivo = archivoInput.files[0];
-
-      if (!archivo) {
-        alert("Seleccioná un archivo Excel válido.");
-        return;
-      }
+      const archivo = document.getElementById("archivoExcel").files[0];
+      if (!archivo) return alert("Seleccioná un archivo.");
 
       const lector = new FileReader();
-
       lector.onload = function(e) {
-        try {
-          const datos = new Uint8Array(e.target.result);
-          const workbook = XLSX.read(datos, { type: "array" });
-          const hoja = workbook.Sheets[workbook.SheetNames[0]];
-          const htmlTabla = XLSX.utils.sheet_to_html(hoja);
-
-          const nuevaVentana = window.open("", "_blank");
-          nuevaVentana.document.open();
-          nuevaVentana.document.write(`<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Contenido Excel</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="logo-32x32.png">
-  <style>
-    body.informacion {
-      background-image: url('mantenimiento.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      padding: 40px;
-    }
-    table {
-      background-color: #fff;
-      color: #333;
-      border-collapse: collapse;
-      width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    th {
-      background-color: #007BFF;
-      color: #fff;
-    }
-  </style>
-</head>
-<body class="informacion">
-  <h2>LISTADOS TELEFÓNICOS</h2>
-  <h2>NÚMEROS DE EMERGENCIAS</h2>
-  <h2>TAREAS REALIZADAS</h2>
-  ${htmlTabla}
-</body>
-</html>`);
-          nuevaVentana.document.close();
-        } catch (error) {
-          alert("Error al procesar el archivo. ¿Seguro que es un .xlsx válido?");
-          console.error(error);
-        }
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: "array" });
+        const htmlTabla = XLSX.utils.sheet_to_html(workbook.Sheets[workbook.SheetNames[0]]);
+        document.getElementById("resultado-excel").innerHTML = htmlTabla;
       };
-
-      lector.onerror = function() {
-        alert("Hubo un problema al leer el archivo Excel.");
-      };
-
       lector.readAsArrayBuffer(archivo);
     }
   </script>
