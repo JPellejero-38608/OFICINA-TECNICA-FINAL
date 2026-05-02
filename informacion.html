@@ -8,7 +8,51 @@
   <link rel="icon" type="image/png" href="logo-32x32.png" />
   <script src="https://kit.fontawesome.com/6b48925c26.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.17.0/dist/xlsx.full.min.js"></script>
+
+  <style>
+    body.informacion {
+      background-image: url('mantenimiento.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .loader-box {
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid #ffd700;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .btn-cargar {
+      background-color: #ffd700;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #resultado-excel {
+      margin-top: 30px;
+      background: white;
+      color: #333;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border: 1px solid #ccc; }
+  </style>
 </head>
+
 <body class="informacion">
   <nav class="nav-bar">
     <div class="left-group">
@@ -18,24 +62,25 @@
     </div>
   </nav>
 
-  <main class="container py-4 text-center">
-    <section class="excel-loader mb-5">
-      <h2>📄 Gestión de Archivos Técnicos</h2>
-      <p>Cargue su listado de tareas o números telefónicos en formato .xlsx</p>
-      <input type="file" id="archivoExcel" accept=".xlsx" class="mb-2" />
-      <br>
-      <button onclick="leerExcel()" class="btn-accion">Procesar Archivo</button>
-    </section>
+  <main>
+    <h2>LISTADOS TELEFÓNICOS</h2>
+    <h2>NÚMEROS DE EMERGENCIAS</h2>
+    <h2>TAREAS REALIZADAS</h2>
 
-    <div id="resultado-excel" class="table-responsive mt-4">
-      <!-- Aquí aparecerá la tabla del Excel sin abrir ventanas nuevas -->
+    <div class="loader-box">
+      <h3>📄 Cargar archivo Excel</h3>
+      <input type="file" id="archivoExcel" accept=".xlsx" style="margin-bottom: 15px;" />
+      <br>
+      <button onclick="leerExcel()" class="btn-cargar">Visualizar Listado</button>
     </div>
+
+    <div id="resultado-excel"></div>
   </main>
 
   <script>
     function leerExcel() {
       const archivo = document.getElementById("archivoExcel").files[0];
-      if (!archivo) return alert("Seleccioná un archivo.");
+      if (!archivo) return alert("Por favor, seleccione un archivo .xlsx");
 
       const lector = new FileReader();
       lector.onload = function(e) {
